@@ -1,16 +1,10 @@
 // complete the given function
 
- const string = str.toLowerCase();
- const len = str.length;
+function palindrome(str){
+ // Convert the string to lowercase and remove non-alphanumeric characters
+  str = str.toLowerCase().replace(/[^a-z0-9]/g, '');
 
-    // loop through half of the string
-    for (let i = 0; i < len / 2; i++) {
-
-        // check if first and last string are same
-        if (string[i] !== string[len - 1 - i]) {
-            return false;
-        }
-    }
-    return true;
+  // Check if the string is equal to its reverse
+  return str === str.split('').reverse().join('');
 }
 module.exports = palindrome
